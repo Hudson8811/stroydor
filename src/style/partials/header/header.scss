@@ -1,0 +1,208 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 65px;
+
+  &-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:nth-child(1) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &-col {
+    &:nth-child(1) {
+      position: relative;
+      width: 228px;
+      flex-shrink: 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        display: block;
+        height: 78px;
+        width: 1px;
+        margin-top: -39px;
+        background-color: #282828;
+      }
+    }
+
+    &:nth-child(2) {
+      box-sizing: border-box;
+      width: 36.3%;
+      padding-left: 3.8%;
+
+      h3 {
+        display: block;
+        font-size: $small;
+        line-height: $smallLH;
+        color: $white;
+        text-transform: uppercase;
+      }
+    }
+
+    &:nth-child(3) {
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 25%;
+      padding-left: 37px;
+
+      span {
+        display: block;
+        font-size: $small2;
+        line-height: $small2LH;
+        font-weight: $medium;
+        color: $gray;
+      }
+    }
+
+    &:nth-child(4) {
+      text-align: center;
+      box-sizing: border-box;
+      align-self: flex-start;
+      width: 25%;
+      padding-top: 10px;
+      padding-left: 40px;
+    }
+  }
+
+  &-logo {
+    position: relative;
+    display: block;
+    width: 163px;
+  }
+
+  &-info {
+    width: calc(100% - 172px);
+
+    &-phone {
+      display: block;
+      text-align: right;
+      font-size: $text2;
+      line-height: $text2;
+      font-weight: $medium;
+      color: $white;
+      text-decoration: none;
+    }
+
+    &-mail {
+      text-align: right;
+      display: block;
+      margin-top: 20px;
+      font-size: $normal;
+      line-height: $small2LH;
+      font-weight: $medium;
+      color: $yellow;
+    }
+  }
+
+  &-date {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $normal;
+    line-height: $small2LH;
+    font-weight: $medium;
+    color: $white;
+
+    &:before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      height: 22px;
+      width: 22px;
+      margin-right: 20px;
+      background: center / auto url(../img/time.svg) no-repeat;
+    }
+  }
+
+  &-menu {
+    display: block;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.9);
+
+    ul {
+      list-style: none;
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      border: none;
+      padding: 0;
+      padding-left: 30px;
+
+      a:not(.header-paymentBtn) {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 30px 0;
+        font-size: $menu;
+        line-height: $menu;
+        font-weight: bold;
+        color: $white;
+        text-decoration: none;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 5px;
+          height: 10px;
+          margin-top: 2px;
+          margin-left: 39px;
+          background: center / auto url(../img/arrow-menu-item.svg) no-repeat;
+          flex-shrink: 0;
+        }
+      }
+
+      .active {
+        a {
+          color: $btnGray;
+
+          &:after {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+
+  &-paymentBtn {
+    display: block;
+    box-sizing: border-box;
+    padding: 30px 124px 30px 78px;
+    font-size: $menu;
+    line-height: $menu;
+    font-weight: bold;
+    color: $btnBlack;
+    background-color: $btnYallow;
+    text-decoration: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      margin-top: -11px;
+      right: 57px;
+      z-index: 2;
+      display: block;
+      height: 22px;
+      width: 22px;
+      margin-left: 0;
+      background: center / auto url(../img/arrowBtn.svg) no-repeat;
+    }
+  }
+}

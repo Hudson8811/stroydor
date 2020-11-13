@@ -1,0 +1,38 @@
+body,
+a,
+button {
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-size: $text;
+  line-height: $textLH;
+  background-color: $white;
+}
+
+.container {
+  position: relative;
+  display: block;
+  width: 96%;
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+.header-container {
+  position: relative;
+  display: block;
+  width: 98%;
+  max-width: 1740px;
+  margin: 0 auto;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.hide {
+  display: none;
+}
