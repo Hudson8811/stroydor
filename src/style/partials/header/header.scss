@@ -200,9 +200,81 @@
       z-index: 2;
       display: block;
       height: 22px;
-      width: 22px;
+      width: 23px;
       margin-left: 0;
-      background: center / auto url(../img/arrowBtn.svg) no-repeat;
+      background: center / auto url(../img/fixArrow.svg) no-repeat;
+    }
+  }
+
+  &-fixed {
+    padding-top: 0;
+
+    .header-row:nth-child(1) {
+      display: none;
+    }
+
+    .header-menu ul {
+      li {
+        &.hide {
+          display: block;
+        }
+      }
+      a {
+        padding: 0;
+        font-size: 18px;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .header-logo {
+      box-sizing: border-box;
+      width: 230px;
+      border-right: 1px solid #3f3f3f;
+
+      &-img {
+        display: block;
+        height: 85px;
+        width: 100%;
+        margin-left: -45px;
+      }
+    }
+
+    .header-date {
+      height: 85px;
+      color: #7e7e7e;
+      padding-left: 36px;
+      border-left: 1px solid #3f3f3f;
+    }
+
+    .header-paymentBtn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85px;
+      width: 300px;
+
+      span {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        content: '';
+        order: 1;
+        position: relative;
+        display: block;
+        height: 22px;
+        width: 22px;
+        margin-left: 27px;
+        background: center / cover url(../img/fixArrow.svg) no-repeat;
+      }
     }
   }
 }

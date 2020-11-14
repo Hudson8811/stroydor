@@ -1,11 +1,5 @@
-// ШРИФТЫ
-$light: 'AktifoBLight';
-$medium: 'AktifoBMedium';
-$semiBold: 'AktifoBSemiBold';
-$bold: 'AktifoBBold';
-
 // РАЗМЕРЫ ШРИФТОВ
-$extra: 300px;
+$extraB: 300px;
 $title: 71px;
 $title2: 58px;
 $text4: 26px;
@@ -25,11 +19,14 @@ $title2HL: 66px;
 $text4LH: 36px;
 $textLH: 30px;
 $text2LH: 28px;
+$textGridLH: 26px;
 $smallLH: 17px;
 $small2LH: 16px;
 
 // ЖИРНОСТЬ
+$extra: 800;
 $bold: 700;
+$semi: 600;
 $medium: 500;
 $light: 300;
 $extraLight: 200;
@@ -49,3 +46,4 @@ $mainBlack: #000;
 $pGray: #8b8b8b;
 $bgBlack: #1c1c1c;
 $grayText2: #9c9c9c;
+$greedBlack: #181818;
