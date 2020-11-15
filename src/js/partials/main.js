@@ -4,6 +4,20 @@ function paralax(item, num){
     document.querySelector(`${item}`).style.marginTop = -position + 'px';
 }
 
+
+function scrollControl(){
+    if($(window).width() < 470){
+
+        $('.castom_scroll').mCustomScrollbar({
+            axis:"x",
+              scrollInertia:500,
+              contentTouchScroll:10
+        });
+    } else{
+        $('.castom_scroll').mCustomScrollbar('destroy');
+    }
+}
+
 $(document).ready(function () {
     new WOW().init();
 
@@ -70,5 +84,16 @@ $(document).ready(function () {
         $('.equipment-heading').removeClass('equipment-heading-active');
     });
     
+    $('.burger').click(function(){
+        $(this).toggleClass('burger-active');
+        $('.header-container').toggleClass('header-container-active');
+    })
+
+
+    scrollControl()
+
+    $(window).resize(function(){
+        scrollControl()
+    })
 });
 

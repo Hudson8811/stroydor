@@ -23,6 +23,10 @@ body {
   width: 96%;
   max-width: 1680px;
   margin: 0 auto;
+
+  @include for-big-mobile {
+    width: calc(100% - 54px);
+  }
 }
 
 .header-container {

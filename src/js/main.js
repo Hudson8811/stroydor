@@ -5,6 +5,7 @@
 //= libs/jquery.maskedinput.min.js
 //= libs/slick.min.js
 //= libs/wow.min.js
+//= libs/jquery.mCustomScrollbar.min.js
 
 /* my scripts */
 

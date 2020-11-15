@@ -4,6 +4,55 @@
   background: $blackBg center top / cover url(../img/bgFirstSection.png) no-repeat;
   background-attachment: fixed;
 
+  @include for-desktop2 {
+    padding-top: 300px;
+  }
+
+  @include for-big-mobile {
+    padding-top: 95px;
+    background-image: url(../img/mobilebg.png);
+  }
+
+  &-mobile-price-btn {
+    display: none;
+
+    @include for-big-mobile {
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      align-items: center;
+      width: 270px;
+      height: 52px;
+      padding-left: 29px;
+      padding-right: 14px;
+      margin-top: 27px;
+      font-size: 13px;
+      line-height: 17px;
+      font-weight: $bold;
+      color: $mainBlack;
+      text-decoration: none;
+      background-color: $btnYallow;
+
+      img {
+        display: block;
+        width: 34px;
+      }
+    }
+  }
+
+  &-mobile-heading {
+    display: none;
+
+    @include for-big-mobile {
+      display: block;
+      margin-top: 14px;
+      margin-bottom: 245px;
+      font-size: 12px;
+      line-height: 16px;
+      color: $white;
+    }
+  }
+
   &-heading {
     position: relative;
     box-sizing: border-box;
@@ -31,6 +80,16 @@
       font-weight: $extraLight;
       color: $white;
 
+      @include for-desktop2 {
+        font-size: 40px;
+        line-height: 45px;
+      }
+
+      @include for-big-mobile {
+        font-size: 25px;
+        line-height: 32px;
+      }
+
       span {
         display: block;
       }
@@ -41,12 +100,21 @@
         width: 100%;
       }
     }
+
+    @include for-big-mobile {
+      margin-bottom: 45px;
+      padding-bottom: 0;
+    }
   }
 
   &-botHeading {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    @include for-big-mobile {
+      display: none;
+    }
 
     p {
       display: block;
@@ -110,6 +178,10 @@
     justify-content: flex-start;
     align-content: flex-start;
 
+    @include for-big-mobile {
+      flex-wrap: wrap;
+    }
+
     &-item {
       display: flex;
       box-sizing: border-box;
@@ -120,6 +192,16 @@
       background-color: rgba(28, 28, 28, 0.7);
       flex-shrink: 0;
 
+      @include for-desktop2 {
+        height: 226px;
+        padding: 42px 29px 20px 25px;
+      }
+
+      @include for-big-mobile {
+        height: 140px;
+        margin-top: 0 !important;
+      }
+
       p {
         display: block;
         margin: 55px 0 30px;
@@ -129,8 +211,19 @@
         font-weight: $medium;
         color: $white;
 
+        @include for-desktop2 {
+          font-size: 15px;
+          line-height: 18px;
+          margin: auto 0;
+        }
+
         span {
           text-decoration: underline;
+        }
+
+        @include for-big-mobile {
+          font-size: 12px;
+          line-height: 15px;
         }
       }
 
@@ -138,10 +231,57 @@
         position: absolute;
         left: 50%;
         bottom: 100%;
+
+        @include for-big-mobile {
+          position: relative;
+          left: auto;
+          bottom: auto;
+          order: 0;
+          width: calc(50% + 27px);
+          margin-left: -27px;
+          margin-right: 50%;
+          padding: 34px 20px 15px 27px;
+
+          .equipment-icon {
+            width: 19px !important;
+          }
+        }
       }
 
       &:nth-child(3) {
         background-color: transparent;
+
+        @include for-big-mobile {
+          order: 1;
+          width: 50%;
+          padding: 35px 50px 35px 0;
+
+          .equipment-icon {
+            width: 20px !important;
+          }
+
+          p {
+            margin-bottom: 0;
+            margin-top: auto;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        background-color: transparent;
+
+        @include for-big-mobile {
+          order: 2;
+          width: calc(50% + 27px);
+          margin-right: -27px;
+          margin-bottom: 35px;
+          padding: 35px 13px 20px 23px;
+          background-color: rgba(28, 28, 28, 0.7);
+
+          .equipment-icon {
+            width: 25px !important;
+          }
+        }
       }
 
       &:last-child {
@@ -153,18 +293,43 @@
         padding: 38px 45px 48px 50px;
         background-color: $btnYallow;
 
+        @include for-desktop2 {
+          height: 200px;
+          padding: 19px 22px 24px 25px;
+        }
+
+        @include for-big-mobile {
+          display: none;
+        }
+
         p {
           margin: 49px 0 0;
           font-size: $text3;
           line-height: $textLH;
           font-weight: bold;
           color: $mainBlack;
+
+          @include for-desktop2 {
+            margin: auto 0 0;
+            font-size: 15px;
+            line-height: 18px;
+          }
         }
 
         .equipment-link {
           height: 72px;
           width: 72px;
           margin-left: auto;
+
+          @include for-desktop2 {
+            height: 36px;
+            width: 36px;
+
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
         }
       }
 
@@ -175,11 +340,54 @@
         padding: 80px 96px 104px 120px;
         margin-left: -120px;
 
+        @include for-desktop2 {
+          width: 50%;
+          padding: 40px 48px 52px 60px;
+          margin-left: 0;
+        }
+
+        @include for-big-mobile {
+          order: 3;
+          width: 100%;
+          padding: 34px 17px 27px 17px;
+
+          .equipment-desktop {
+            display: none;
+          }
+
+          .equipment-phone {
+            font-size: 12px;
+            line-height: 18px;
+
+            .equipment-phone-link {
+              font-size: 12px;
+              line-height: 18px;
+            }
+          }
+
+          .equipment-mobile-price-btn {
+            width: 100%;
+          }
+        }
+
         p {
           margin: 204px 0 60px;
           font-size: $title2;
           line-height: $title2HL;
           font-weight: bold;
+
+          @include for-desktop2 {
+            margin-top: 100px;
+            font-size: 37px;
+            line-height: 45px;
+          }
+
+          @include for-big-mobile {
+            margin: 18px 5px 28px;
+            font-size: 25px;
+            line-height: 28px;
+            font-weight: bold;
+          }
         }
 
         span {
@@ -187,6 +395,12 @@
           font-size: $normal2;
           margin-left: auto;
           color: $spanGray;
+
+          @include for-big-mobile {
+            margin-left: 0;
+            font-size: 10px;
+            line-height: 13px;
+          }
         }
       }
     }
@@ -197,6 +411,17 @@
     height: 43px;
     width: 43px;
     margin-left: auto;
+
+    @include for-big-mobile {
+      height: 17px;
+      width: 20px;
+      margin-top: -20px;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
   }
 
   &-phone {
@@ -219,12 +444,26 @@
     box-sizing: border-box;
     padding: 100px 0 255px;
 
+    @include for-big-mobile {
+      padding: 72px 0 56px;
+    }
+
     p {
       display: block;
       margin-bottom: 30px;
       font-size: $text2;
       line-height: $text2LH;
       color: $pGray;
+
+      @include for-desktop {
+        font-size: 15px;
+      }
+
+      @include for-big-mobile {
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 15px;
+      }
     }
 
     &-bigNumber {
@@ -234,6 +473,11 @@
       font-size: $extraB;
       line-height: $extraB;
       color: $white;
+
+      @include for-desktop {
+        font-size: 150px;
+        line-height: 225px;
+      }
 
       b {
         position: absolute;
@@ -245,6 +489,15 @@
           line-height: 75px;
         }
       }
+
+      @include for-big-mobile {
+        font-size: 77px;
+        line-height: 77px;
+
+        b {
+          display: none;
+        }
+      }
     }
 
     span {
@@ -254,6 +507,18 @@
       font-size: $text4;
       line-height: $text2LH;
       color: $white;
+
+      @include for-desktop {
+        margin-top: 0;
+        font-size: 20px;
+        line-height: 25px;
+      }
+
+      @include for-big-mobile {
+        margin-top: 20px;
+        font-size: 17px;
+        line-height: 21px;
+      }
     }
   }
 }
@@ -278,24 +543,50 @@
   align-items: flex-end;
   margin-top: -130px;
 
+  @include for-big-mobile {
+    margin-top: 0;
+    display: block;
+  }
+
   &-item {
     box-sizing: border-box;
     width: 50%;
 
+    @include for-big-mobile {
+      width: 100%;
+    }
+
     &:first-child {
       padding: 90px 120px 165px;
       background-color: $white;
+
+      @include for-desktop2 {
+        padding: 45px 60px 80px;
+      }
 
       .project-link,
       .project-number,
       p {
         color: $mainBlack;
       }
+
+      @include for-big-mobile {
+        padding: 35px 27px 40px;
+
+        .project-icon {
+          margin-top: -52px;
+          margin-left: 20px !important;
+        }
+      }
     }
 
     &:last-child {
       padding: 100px 90px 55px;
       background-color: $bgBlack;
+
+      @include for-desktop2 {
+        padding: 50px 45px 22px;
+      }
 
       .project-link,
       .project-number,
@@ -312,6 +603,14 @@
           background-image: url(../img/qItem1.svg);
         }
       }
+      @include for-big-mobile {
+        padding: 35px 27px 40px;
+
+        .project-icon {
+          margin-top: -42px !important;
+          margin-left: 15px !important;
+        }
+      }
     }
 
     p {
@@ -322,6 +621,21 @@
       font-size: $text4;
       line-height: $text4LH;
       font-weight: $medium;
+
+      @include for-desktop2 {
+        font-size: 20px;
+        line-height: 25px;
+      }
+
+      @include for-big-mobile {
+        width: 150px;
+        font-size: 14px;
+        line-height: 19px;
+
+        br {
+          display: none;
+        }
+      }
     }
   }
 
@@ -330,12 +644,37 @@
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 53px;
+
+    @include for-big-mobile {
+      margin-top: 40px;
+      margin-bottom: 35px;
+    }
+
+    img {
+      width: 82px;
+    }
+
+    @include for-desktop2 {
+      img {
+        width: 46px;
+      }
+    }
   }
 
   &-number {
     display: block;
     font-size: 165px;
     line-height: 165px;
+
+    @include for-desktop2 {
+      font-size: 100px;
+      line-height: 100px;
+    }
+
+    @include for-big-mobile {
+      font-size: 63px;
+      line-height: 63px;
+    }
   }
 
   &-link {
@@ -346,6 +685,15 @@
     font-weight: $medium;
     text-decoration: none;
 
+    @include for-desktop2 {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    @include for-big-mobile {
+      justify-content: center;
+    }
+
     &:after {
       content: '';
       display: block;
@@ -354,6 +702,13 @@
       margin-left: 30px;
       flex-shrink: 0;
       background: center / contain url(../img/moreBtn2.svg) no-repeat;
+
+      @include for-desktop2 {
+        height: 25px;
+        width: 25px;
+        margin-left: 15px;
+        background-size: contain;
+      }
     }
   }
 }
@@ -363,6 +718,10 @@
   box-sizing: border-box;
   padding: 155px 0 125px;
 
+  @include for-big-mobile {
+    padding: 65px 0 85px;
+  }
+
   &-title {
     display: block;
     text-align: center;
@@ -371,8 +730,26 @@
     font-weight: $medium;
     color: $mainBlack;
 
+    @include for-desktop3 {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    @include for-big-mobile {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
     span {
       display: block;
+
+      @include for-small-mobile {
+        display: inline;
+      }
+    }
+
+    @include for-small-mobile {
+      padding: 0 32px;
     }
   }
 
@@ -383,6 +760,16 @@
     line-height: 33px;
     font-weight: $medium;
     color: $grayText2;
+
+    @include for-desktop3 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include for-big-mobile {
+      font-size: 15px;
+      line-height: 18px;
+    }
 
     span {
       display: block;
@@ -395,8 +782,17 @@
     margin-left: 72px;
     background-color: $btnYallow;
 
+    @include for-big-mobile {
+      width: calc(100% - 54px);
+      margin-left: 27px;
+    }
+
     &-wrap {
       margin: 55px 0;
+
+      @include for-desktop3 {
+        margin: 25px 0;
+      }
     }
   }
 }
@@ -406,16 +802,67 @@
   padding: 122px 0 100px;
   background: center / cover fixed url(../img/servBg.gif) no-repeat;
 
+  &-mobile-more-link {
+    display: none;
+
+    @include for-big-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 18px;
+      font-size: 16px;
+      font-weight: $bold;
+      color: $mainBlack;
+      text-decoration: none;
+
+      &:after {
+        content: '';
+        display: block;
+        height: 34px;
+        width: 39px;
+        margin-left: 17px;
+        background: center / contain url(../img/mobilelink.png) no-repeat;
+      }
+    }
+  }
+
+  @include for-big-mobile {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: transparent;
+  }
+
   .container {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
+
+    @include for-big-mobile {
+      display: block;
+    }
   }
 
   &-item {
     position: relative;
     width: 50%;
     z-index: 2;
+
+    @include for-desktop {
+      &:nth-child(1) {
+        width: 40%;
+      }
+
+      &:nth-child(2) {
+        width: 60%;
+      }
+    }
+
+    @include for-big-mobile {
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: 100%;
+      }
+    }
   }
 
   &-grid {
@@ -427,6 +874,17 @@
     margin-right: auto;
     background-color: $greedBlack;
 
+    @include for-desktop {
+      width: 100%;
+    }
+
+    @include for-big-mobile {
+      display: block;
+      background-color: transparent;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #b7b7b7;
+    }
+
     &-item {
       display: flex;
       box-sizing: border-box;
@@ -437,13 +895,25 @@
       width: 50%;
       padding: 75px 75px 72px 72px;
 
+      @include for-desktop {
+        height: 300px;
+        padding: 30px;
+      }
+
       &:nth-child(2n - 1) {
         border-right: 2px solid #262626;
+        @include for-big-mobile {
+          border: none;
+        }
       }
 
       &:nth-child(1),
       &:nth-child(2) {
         border-bottom: 2px solid #262626;
+
+        @include for-big-mobile {
+          border: none;
+        }
       }
 
       p {
@@ -453,6 +923,25 @@
         line-height: $textGridLH;
         font-weight: $semi;
         color: $white;
+
+        @include for-desktop {
+          font-size: 15px;
+          line-height: 18px;
+        }
+
+        @include for-big-mobile {
+          width: 70%;
+        }
+      }
+
+      @include for-big-mobile {
+        height: auto;
+        width: 100%;
+        background-color: $greedBlack;
+
+        & + & {
+          margin-top: 12px;
+        }
       }
     }
 
@@ -498,6 +987,22 @@
       font-weight: bold;
       color: #fff;
       border-bottom: 3px solid $btnYallow;
+
+      @include for-desktop {
+        width: 95%;
+        font-size: 50px;
+        line-height: 55px;
+      }
+
+      @include for-big-mobile {
+        text-align: center;
+        width: 100%;
+        font-size: 38px;
+        line-height: 38px;
+        color: $mainBlack;
+        padding: 0;
+        border: none;
+      }
     }
 
     span:not(.nowrap) {
@@ -506,6 +1011,15 @@
       font-size: 21px;
       line-height: 31px;
       color: $white;
+
+      @include for-desktop {
+        font-size: 17px;
+        line-height: 20px;
+      }
+
+      @include for-big-mobile {
+        display: none;
+      }
     }
   }
 
@@ -519,12 +1033,26 @@
     padding: 42px 48px 50px 42px;
     background-color: $btnYallow;
 
+    @include for-desktop {
+      width: 200px;
+      padding: 30px;
+    }
+
+    @include for-big-mobile {
+      display: none;
+    }
+
     p {
       display: block;
       margin-top: 54px;
       font-size: 32px;
       line-height: 36px;
       font-weight: bold;
+
+      @include for-desktop {
+        font-size: 15px;
+        line-height: 18px;
+      }
     }
 
     &-link {
@@ -532,6 +1060,16 @@
       height: 60px;
       width: 60px;
       margin-left: auto;
+
+      @include for-desktop {
+        height: 36px;
+        width: 36px;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -539,26 +1077,62 @@
 .users {
   padding-top: 245px;
 
+  @include for-desktop {
+    padding-top: 160px;
+  }
+
+  @include for-big-mobile {
+    padding-top: 85px;
+  }
+
   h2 {
     display: block;
     font-size: $title;
     line-height: $titleHL;
     font-weight: bold;
     color: $mainBlack;
+
+    @include for-desktop {
+      font-size: 50px;
+      line-height: 55px;
+    }
+
+    @include for-big-mobile {
+      font-size: 22px;
+      line-height: 26px;
+    }
   }
 
   &-slider {
     padding: 100px 0 160px;
 
+    @include for-desktop {
+      padding: 50px 0;
+    }
+
+    @include for-big-mobile {
+      padding: 30px 0 60px;
+    }
+
     &-item {
       margin: 0 24px;
+
+      @include for-big-mobile {
+        margin: 0 9px;
+      }
     }
+
     p {
       display: block;
       font-size: 130px;
       line-height: 130px;
       font-weight: $bold;
       color: #dedede;
+
+      @include for-desktop {
+        font-size: 58px;
+        line-height: 60px;
+      }
 
       &:after {
         content: '/';
@@ -567,6 +1141,12 @@
         padding-left: 48px;
         font-weight: $medium;
         color: #f4f4f4;
+
+        @include for-desktop {
+          padding-left: 20px;
+          font-size: 58px;
+          line-height: 60px;
+        }
       }
     }
 
@@ -579,6 +1159,19 @@
       font-size: $normal;
       font-weight: $medium;
       color: #aaaaaa;
+
+      @include for-desktop {
+        padding-right: 70px;
+        margin-top: 15px;
+      }
+
+      @include for-big-mobile {
+        text-align: center;
+        width: calc(100% - 45px);
+        padding-right: 0;
+        font-size: 12px;
+        line-height: 15px;
+      }
     }
   }
 
@@ -587,6 +1180,10 @@
     width: 100%;
     height: 4px;
     background-color: $mainBlack;
+
+    @include for-big-mobile {
+      display: none;
+    }
   }
 
   &-slider {
@@ -598,6 +1195,32 @@
   position: relative;
   padding-top: 86px;
   padding-bottom: 250px;
+
+  .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: $mainBlack;
+    height: 2px;
+    margin: 7px auto;
+  }
+
+  .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {
+    background-color: #e7e7e7;
+  }
+
+  .mCSB_scrollTools .mCSB_draggerContainer {
+    width: calc(100% - 54px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-mobile-more-link {
+    margin-top: 35px;
+  }
+
+  @include for-big-mobile {
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
 
   .services-tile {
     left: 25%;
@@ -619,11 +1242,18 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+
+    @include for-big-mobile {
+    }
   }
 
   &-maping,
   &-title-block {
     width: 50%;
+
+    @include for-small-mobile {
+      width: 100%;
+    }
   }
 
   h2 {
@@ -633,6 +1263,17 @@
     line-height: $titleHL;
     font-weight: bold;
     color: $mainBlack;
+
+    @include for-desktop {
+      font-size: 50px;
+      line-height: 55px;
+    }
+
+    @include for-big-mobile {
+      max-width: 180px;
+      font-size: 22px;
+      line-height: 26px;
+    }
   }
 
   &-maping {
@@ -643,6 +1284,24 @@
       position: absolute;
       top: -160px;
       left: -118px;
+
+      @include for-big-desktop {
+        top: -8.33vw;
+        left: -6.14vw;
+        width: 61.82vw;
+      }
+
+      @include for-big-mobile {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 550px;
+        margin-top: -70px;
+        margin-left: -145px;
+        height: 500px;
+        object-fit: cover;
+        object-position: top;
+      }
     }
 
     &-dote {
@@ -654,34 +1313,104 @@
       border-radius: 50%;
       cursor: pointer;
 
+      @include for-big-desktop {
+        width: 0.73vw;
+        height: 0.73vw;
+      }
+
+      @include for-big-mobile {
+        width: 6px;
+        height: 6px;
+      }
+
       &:nth-child(1) {
         left: 318px;
         top: 100px;
+
+        @include for-big-desktop {
+          left: 16.56vw;
+          top: 5.2vw;
+        }
+
+        @include for-big-mobile {
+          left: 60px;
+          top: 50px;
+        }
       }
 
       &:nth-child(2) {
         left: 585px;
         top: 135px;
+
+        @include for-big-desktop {
+          left: 30.46vw;
+          top: 7.03vw;
+        }
+
+        @include for-big-mobile {
+          left: 187px;
+          top: 67px;
+        }
       }
 
       &:nth-child(3) {
         left: 138px;
         top: 590px;
+
+        @include for-big-desktop {
+          left: 7.18vw;
+          top: 30.72vw;
+        }
+
+        @include for-big-mobile {
+          left: -20px;
+          top: 285px;
+        }
       }
 
       &:nth-child(4) {
         left: 275px;
         top: 520px;
+
+        @include for-big-desktop {
+          left: 14.32vw;
+          top: 27.08vw;
+        }
+
+        @include for-big-mobile {
+          left: 40px;
+          top: 245px;
+        }
       }
 
       &:nth-child(5) {
         left: 424px;
         top: 499px;
+
+        @include for-big-desktop {
+          left: 22.08vw;
+          top: 25.98vw;
+        }
+
+        @include for-big-mobile {
+          left: 115px;
+          top: 240px;
+        }
       }
 
       &:nth-child(6) {
         left: 455px;
         top: 565px;
+
+        @include for-big-desktop {
+          left: 23.69vw;
+          top: 29.42vw;
+        }
+
+        @include for-big-mobile {
+          left: 120px;
+          top: 268px;
+        }
       }
 
       &-active {
@@ -697,6 +1426,20 @@
           margin-left: -15px;
           border-radius: 50%;
           background-color: $btnYallow;
+
+          @include for-big-desktop {
+            height: 1.46vw;
+            width: 1.46vw;
+            margin-top: -0.73vw;
+            margin-left: -0.73vw;
+          }
+
+          @include for-big-mobile {
+            width: 12px;
+            height: 12px;
+            margin-top: -6px;
+            margin-left: -6px;
+          }
         }
       }
     }
@@ -713,8 +1456,58 @@
         list-style: none;
         display: block;
 
+        @include for-small-mobile {
+          display: flex;
+          justify-content: flex-start;
+          align-items: stretch;
+          padding: 0 27px;
+
+          li {
+            width: 90px;
+            flex-shrink: 0;
+          }
+        }
+
         li + li {
           margin-top: 45px;
+
+          @include for-big-desktop {
+            margin-top: 2.34vw;
+          }
+
+          @include for-small-mobile {
+            margin-top: 0;
+            margin-left: 45px;
+          }
+        }
+      }
+
+      @include for-big-desktop {
+        padding: 4.68vw 6.14vw 0 7.81vw;
+      }
+
+      @include for-big-mobile {
+        padding: 20px;
+      }
+
+      @include for-small-mobile {
+        width: 100vw;
+        box-sizing: border-box;
+        margin-left: -27px;
+        margin-top: -100px;
+        padding: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          z-index: 0;
+          display: block;
+          position: absolute;
+          height: 150px;
+          width: 100%;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
         }
       }
     }
@@ -735,6 +1528,23 @@
       &-active {
         opacity: 1;
       }
+
+      @include for-big-desktop {
+        padding-bottom: 2.08vw;
+        font-size: 1.04vw;
+        line-height: 1.2vw;
+      }
+
+      @include for-big-mobile {
+        font-size: 13px;
+        line-height: 17px;
+      }
+
+      @include for-small-mobile {
+        padding-bottom: 15px;
+        border-bottom: none;
+        opacity: 1;
+      }
     }
   }
 
@@ -746,5 +1556,15 @@
     font-weight: $bold;
     color: $mainBlack;
     text-decoration: none;
+
+    @include for-big-desktop {
+      margin-top: 10.41vw;
+      font-size: 2.06vw;
+      line-height: 3.22vw;
+    }
+
+    @include for-small-mobile {
+      display: none;
+    }
   }
 }

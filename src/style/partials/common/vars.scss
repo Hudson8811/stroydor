@@ -47,3 +47,63 @@ $pGray: #8b8b8b;
 $bgBlack: #1c1c1c;
 $grayText2: #9c9c9c;
 $greedBlack: #181818;
+
+@mixin for-big-desktop {
+  @media (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (max-width: 1640px) {
+    @content;
+  }
+}
+
+@mixin for-min-desktop4 {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin for-desktop2 {
+  @media (max-width: 1360px) {
+    @content;
+  }
+}
+
+@mixin for-desktop3 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-min-desktop3 {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (max-width: 1050px) {
+    @content;
+  }
+}
+
+@mixin for-big-mobile {
+  @media (max-width: 830px) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-small-mobile {
+  @media (max-width: 470px) {
+    @content;
+  }
+}
