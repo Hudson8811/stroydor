@@ -386,7 +386,10 @@
 
   &-fixed {
     padding-top: 0;
-    background-color: #000;
+
+    @include for-big-mobile {
+      background-color: #000;
+    }
 
     .header-row:nth-child(1) {
       display: none;
