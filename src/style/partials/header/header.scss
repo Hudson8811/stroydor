@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 99;
@@ -7,11 +7,8 @@
   width: 100%;
   padding-top: 65px;
 
-  @include for-desktop3 {
-    padding-top: 15px;
-  }
-
   @include for-big-mobile {
+    position: fixed;
     padding: 0;
   }
 
@@ -22,10 +19,6 @@
 
     &:nth-child(1) {
       margin-bottom: 45px;
-
-      @include for-desktop3 {
-        margin-bottom: 15px;
-      }
 
       @include for-big-mobile {
         padding: 24px 0;
@@ -280,7 +273,7 @@
       box-sizing: border-box;
       justify-content: space-between;
       align-items: center;
-      margin: 0;
+      margin: -1px;
       border: none;
       padding: 0;
       padding-left: 30px;
@@ -385,6 +378,7 @@
   }
 
   &-fixed {
+    position: fixed;
     padding-top: 0;
 
     @include for-big-mobile {

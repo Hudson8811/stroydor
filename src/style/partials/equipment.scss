@@ -1,0 +1,22 @@
+.technics {
+  padding: 284px 0 436px;
+  background: center / cover url(../img/equipbg.png) no-repeat;
+
+  span {
+    display: block;
+    padding-bottom: 32px;
+    font-size: 19px;
+    line-height: 22px;
+    font-weight: $medium;
+    color: #8c8c8c;
+    border-bottom: 2px solid rgba(255, 221, 0, 0.6);
+  }
+
+  h2 {
+    display: block;
+    font-size: 110px;
+    line-height: 110px;
+    font-weight: $bold;
+    color: $white;
+  }
+}

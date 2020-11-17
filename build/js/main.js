@@ -31,10 +31,15 @@ return t.apply(e,arguments)}}function a(){this.onload=null,e(t).addClass(d[2]),r
 
 /* my scripts */
 
-function paralax(item, num){
+function paralax(item, num, path){
     let position = window.pageYOffset;
     position /= num;
-    document.querySelector(`${item}`).style.marginTop = -position + 'px';
+    
+    if(path){
+        document.querySelector(`${item}`).style.marginTop = -position + 'px';
+    } else{
+        document.querySelector(`${item}`).style.marginTop = position + 'px';
+    }
 }
 
 
@@ -55,10 +60,11 @@ $(document).ready(function () {
     new WOW().init();
 
     window.addEventListener('scroll', function(){
-        paralax('.equipment-grid-item1', 5);
-        paralax('.equipment-grid-item2', 2);
-        paralax('.equipment-grid-item4', 7);
-        paralax('.equipment-grid-item5', 6);
+        paralax('.equipment-grid-item1', 5, true);
+        paralax('.equipment-grid-item2', 2, true);
+        paralax('.equipment-grid-item4', 7, true);
+        paralax('.equipment-grid-item5', 6, true);
+        paralax('.equipment-bg', 2, false)
     })
 
     $('.services-grid-item').mousemove(function(){
@@ -98,8 +104,11 @@ $(document).ready(function () {
         $(`.useMap-maping-dote[data-pos="${posId}"]`).addClass('useMap-maping-dote-active');
     });
 
+    if ($(this).scrollTop() > 186) $(".header").addClass("header-fixed");
+        else $(".header").removeClass("header-fixed");
+        
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) $(".header").addClass("header-fixed");
+        if ($(this).scrollTop() > 186) $(".header").addClass("header-fixed");
         else $(".header").removeClass("header-fixed");
     });
 

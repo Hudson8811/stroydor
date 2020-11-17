@@ -1,8 +1,46 @@
+@keyframes scaleA {
+  0% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .equipment {
+  overflow: hidden;
   box-sizing: border-box;
-  padding-top: 439px;
-  background: $blackBg center top / cover url(../img/bgFirstSection.png) no-repeat;
-  background-attachment: fixed;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: $blackBg center top / cover url(../img/bgFirstSection.png) no-repeat;
+    animation: 1s linear scaleA;
+
+    @include for-big-mobile {
+      background-image: url(../img/mobilebg.png);
+    }
+  }
+
+  @media screen and (min-width: 1360px) {
+    .container:nth-child(1) {
+      box-sizing: border-box;
+      padding-top: 439px;
+      height: 100vh;
+      min-height: 960px;
+    }
+  }
 
   @include for-desktop2 {
     padding-top: 300px;
@@ -67,9 +105,23 @@
       left: 0;
       display: block;
       height: 1px;
-      width: 0%;
+      width: 100%;
       max-width: 504px;
       background-color: $borderBg;
+      transition: all 1s;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      display: block;
+      height: 1px;
+      width: 0%;
+      max-width: 504px;
+      background-color: $yellow;
       transition: all 1s;
     }
 
@@ -96,8 +148,14 @@
     }
 
     &-active {
-      &:after {
+      &:before {
         width: 100%;
+      }
+
+      & + .equipment-botHeading {
+        p {
+          color: $yellow;
+        }
       }
     }
 
@@ -108,6 +166,7 @@
   }
 
   &-botHeading {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -152,6 +211,15 @@
       top: 0;
       height: 78px;
       width: 32px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 78px;
+      width: 250px;
     }
 
     &-arrow {
@@ -339,6 +407,7 @@
         width: calc(50% + 120px);
         padding: 80px 96px 104px 120px;
         margin-left: -120px;
+        background-color: rgba(28, 28, 28, 1);
 
         @include for-desktop2 {
           width: 50%;
@@ -538,10 +607,12 @@
 }
 
 .project {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   margin-top: -130px;
+  z-index: 2;
 
   @include for-big-mobile {
     margin-top: 0;
@@ -894,6 +965,23 @@
       height: 440px;
       width: 50%;
       padding: 75px 75px 72px 72px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $yellow;
+
+        p {
+          color: $mainBlack;
+        }
+
+        .services-grid-icon-hover {
+          display: block;
+        }
+
+        .services-grid-icon-noHover {
+          display: none;
+        }
+      }
 
       @include for-desktop {
         height: 300px;
@@ -948,6 +1036,10 @@
     &-icon {
       display: block;
       margin-left: auto;
+    }
+
+    &-icon-hover {
+      display: none;
     }
   }
 
@@ -1569,6 +1661,98 @@
 
     @include for-small-mobile {
       display: none;
+    }
+  }
+}
+
+.yellow-tile {
+  &-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    width: 72px;
+    background-color: $mainBlack;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &:hover {
+      .yellow-tile-svg {
+        transform: rotate(0);
+
+        .cls-1 {
+          fill: #ffe400;
+          stroke: #ffe400;
+        }
+      }
+    }
+  }
+
+  &-svg {
+    width: 30px;
+    transition: 0.5s;
+    transform: rotate(-45deg);
+
+    .cls-1 {
+      fill: #fff;
+      stroke: #fff;
+    }
+
+    @include for-desktop2 {
+      width: 20px;
+    }
+  }
+}
+
+.circle-link {
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #343434;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+  transition: 0.5s;
+  margin-right: 40%;
+
+  &-svg {
+    width: 33px;
+    margin-left: -20px;
+
+    .cls-1 {
+      fill: #ffde00;
+      stroke: #ffde00;
+    }
+  }
+
+  &-wrap {
+    flex-shrink: 0;
+    &:hover {
+      .circle-link {
+        transform: scale(1.1);
+        border-color: $white;
+        margin-right: 0;
+
+        &-svg {
+          margin-left: -25px;
+        }
+      }
+    }
+
+    @include for-big-mobile {
+      .circle-link {
+        height: 20px;
+        width: 20px;
+        margin-top: 0;
+        margin-right: 0;
+
+        .circle-link-svg {
+          width: 16px;
+          margin-left: -10px;
+        }
+      }
     }
   }
 }
