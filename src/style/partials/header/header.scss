@@ -353,6 +353,7 @@
       width: 23px;
       margin-left: 0;
       background: center / auto url(../img/fixArrow.svg) no-repeat;
+      transition: 0.5s;
     }
 
     @include for-desktop2 {
@@ -377,6 +378,12 @@
         height: 16px;
         width: 16px;
         margin-top: -8px;
+      }
+    }
+
+    &:hover {
+      &:after {
+        transform: scale(1.1);
       }
     }
   }

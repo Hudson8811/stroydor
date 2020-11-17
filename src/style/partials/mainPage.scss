@@ -109,6 +109,10 @@
       max-width: 504px;
       background-color: $borderBg;
       transition: all 1s;
+
+      @include for-big-mobile {
+        display: none;
+      }
     }
 
     &:before {
