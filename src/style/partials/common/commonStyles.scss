@@ -15,7 +15,6 @@ body {
   font-size: $text;
   line-height: $textLH;
   background-color: $white;
-  background-color: $mainBlack;
 }
 
 .container {
@@ -44,4 +43,10 @@ body {
 
 .hide {
   display: none;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }

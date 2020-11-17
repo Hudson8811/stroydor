@@ -6,7 +6,11 @@
 //= libs/slick.min.js
 //= libs/wow.min.js
 //= libs/jquery.mCustomScrollbar.min.js
-//= libs/butter.js
+//= libs/TweenMax.min.js
+//= libs/smooth-scrollbar.js
+//= libs/ScrollMagic.min.js
+//= libs/SplitText.min.js
+//= libs/animation.gsap.min.js
 
 /* my scripts */
 

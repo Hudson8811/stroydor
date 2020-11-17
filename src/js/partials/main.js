@@ -28,12 +28,9 @@ $(document).ready(function () {
 
     window.addEventListener('scroll', function(){
         paralax('.equipment-grid-item1', 5, true);
-        paralax('.equipment-grid-item5', 6, true);
-        paralax('.project-item-wrap .project-item', 15, true);
+        paralax('.project-item-wrap .project-item', 8, true);
         paralax('.equipment-bg', 10, false);
-        $('body').css({
-            height: $('.wrapper').height(),
-        })
+      
     })
 
     $('.services-grid-item').mousemove(function(){
@@ -73,13 +70,19 @@ $(document).ready(function () {
         $(`.useMap-maping-dote[data-pos="${posId}"]`).addClass('useMap-maping-dote-active');
     });
 
-    if ($(this).scrollTop() > 236) $(".header").addClass("header-fixed");
+    if ($(this).scrollTop() > 185) $(".header").addClass("header-fixed");
         else $(".header").removeClass("header-fixed");
 
-        
+        $('.users-slider').mousemove(function(){
+            $('.fake-cursor').addClass('active')
+        });
+
+        $('.users-slider').mouseleave(function(){
+            $('.fake-cursor').removeClass('active')
+        });
         
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 236) {
+        if ($(this).scrollTop() > 185) {
             $(".header").addClass("header-fixed");
         }else {
             $(".header").removeClass("header-fixed");
@@ -113,9 +116,60 @@ $(document).ready(function () {
         scrollControl()
     })
 
-   $('body').css({
-       height: $('.wrapper').height(),
-   })
+
+    var follower = $(".fake-cursor");
+var posX = 0,
+	posY = 0;
+var mouseX = 0,
+	mouseY = 0;
+TweenMax.to({}, 0.001, {
+	repeat: -1,
+	onRepeat: function () {
+		posX += (mouseX - posX) / 9;
+		posY += (mouseY - posY) / 9;
+		TweenMax.set(follower, {
+			css: {
+				x: posX - 12,
+				y: posY - 12
+			}
+		});
+	}
+});
+
+$(document).on("mousemove", function (e) {
+	mouseX = e.pageX;
+	mouseY = e.pageY;
+});
+
+
+SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime    : 1600,
+    // Размер шага в пикселях 
+    stepSize         : 50,
+
+    // Дополнительные настройки:
+    
+    // Ускорение 
+    accelerationDelta : 30,  
+    // Максимальное ускорение
+    accelerationMax   : 30,   
+
+    // Поддержка клавиатуры
+    keyboardSupport   : true,  
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll       : 50,
+
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm   : true,
+    pulseScale       : 4,
+    pulseNormalize   : 1,
+
+    // Поддержка тачпада
+    touchpadSupport   : true,
+})
+
 });
 
 
