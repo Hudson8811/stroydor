@@ -299,6 +299,10 @@
           margin-left: 39px;
           background: center / auto url(../img/arrow-menu-item.svg) no-repeat;
           flex-shrink: 0;
+
+          @include for-desktop {
+            margin-left: 16px;
+          }
         }
       }
 
