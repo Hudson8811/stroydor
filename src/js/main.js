@@ -6,6 +6,7 @@
 //= libs/slick.min.js
 //= libs/wow.min.js
 //= libs/jquery.mCustomScrollbar.min.js
+//= libs/butter.js
 
 /* my scripts */
 

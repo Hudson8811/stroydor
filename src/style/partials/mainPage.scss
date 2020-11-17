@@ -340,8 +340,6 @@
       }
 
       &:nth-child(4) {
-        background-color: transparent;
-
         @include for-big-mobile {
           order: 2;
           width: calc(50% + 27px);
@@ -614,7 +612,7 @@
   position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: stretch;
   margin-top: -130px;
   z-index: 2;
 
@@ -626,6 +624,19 @@
   &-item {
     box-sizing: border-box;
     width: 50%;
+
+    &-wrap {
+      width: 50%;
+      box-sizing: border-box;
+      padding-top: 125px;
+
+      @include for-big-mobile {
+        width: 100%;
+      }
+      .project-item {
+        width: 100%;
+      }
+    }
 
     @include for-big-mobile {
       width: 100%;
@@ -645,6 +656,12 @@
         color: $mainBlack;
       }
 
+      .project-link {
+        &:hover {
+          color: $yellow;
+        }
+      }
+
       @include for-big-mobile {
         padding: 35px 27px 40px;
 
@@ -658,6 +675,11 @@
     &:last-child {
       padding: 100px 90px 55px;
       background-color: $bgBlack;
+
+      .project-content {
+        box-sizing: border-box;
+        padding-left: 60px;
+      }
 
       @include for-desktop2 {
         padding: 50px 45px 22px;
@@ -676,6 +698,9 @@
       .project-link {
         &:after {
           background-image: url(../img/qItem1.svg);
+        }
+        &:hover {
+          color: $yellow;
         }
       }
       @include for-big-mobile {
@@ -875,13 +900,29 @@
 .services {
   position: relative;
   padding: 122px 0 100px;
-  background: center / cover fixed url(../img/servBg.gif) no-repeat;
+  background-color: $white;
+
+  &-video {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include for-big-mobile {
+      display: none;
+    }
+  }
 
   &-mobile-more-link {
     display: none;
 
     @include for-big-mobile {
       display: flex;
+      position: relative;
+      z-index: 3;
       justify-content: center;
       align-items: center;
       margin-top: 18px;
@@ -889,6 +930,9 @@
       font-weight: $bold;
       color: $mainBlack;
       text-decoration: none;
+      &:hover {
+        color: $yellow;
+      }
 
       &:after {
         content: '';
@@ -904,7 +948,7 @@
   @include for-big-mobile {
     padding-top: 0;
     padding-bottom: 0;
-    background: transparent;
+    background: $white;
   }
 
   .container {
@@ -965,25 +1009,38 @@
       box-sizing: border-box;
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: flex-end;
       height: 440px;
       width: 50%;
       padding: 75px 75px 72px 72px;
       text-decoration: none;
+      transition: 0.5s;
 
       &:hover {
         background-color: $yellow;
+
+        @include for-big-mobile {
+          background-color: #181818;
+        }
 
         p {
           color: $mainBlack;
         }
 
         .services-grid-icon-hover {
-          display: block;
+          opacity: 1;
+
+          @include for-big-mobile {
+            opacity: 0;
+          }
         }
 
         .services-grid-icon-noHover {
-          display: none;
+          opacity: 0;
+
+          @include for-big-mobile {
+            opacity: 1;
+          }
         }
       }
 
@@ -1011,6 +1068,7 @@
       p {
         display: block;
         margin-top: auto;
+        margin-right: auto;
         font-size: $text;
         line-height: $textGridLH;
         font-weight: $semi;
@@ -1038,12 +1096,19 @@
     }
 
     &-icon {
+      position: absolute;
       display: block;
       margin-left: auto;
+      transition: 0.5s;
+
+      @include for-big-mobile {
+        position: relative;
+      }
     }
 
     &-icon-hover {
-      display: none;
+      display: block;
+      opacity: 0;
     }
   }
 
@@ -1062,10 +1127,12 @@
     top: 0;
     left: 0;
     z-index: 1;
-    display: none;
+    display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: 0.5s;
+    opacity: 0;
 
     @include for-big-mobile {
       opacity: 0;
@@ -1176,6 +1243,7 @@
 
 .users {
   padding-top: 245px;
+  background-color: $white;
 
   @include for-desktop {
     padding-top: 160px;
@@ -1295,6 +1363,7 @@
   position: relative;
   padding-top: 86px;
   padding-bottom: 250px;
+  background-color: $white;
 
   .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     background-color: $mainBlack;
@@ -1719,44 +1788,54 @@
   width: 43px;
   border-radius: 50%;
   transition: 0.5s;
-  margin-right: 40%;
 
   &-svg {
-    width: 33px;
+    height: 20px;
+    width: 30px;
     margin-left: -20px;
+    transform: rotate(45deg);
+    transition: 0.5s;
 
     .cls-1 {
       fill: #ffde00;
       stroke: #ffde00;
     }
   }
+  flex-shrink: 0;
 
-  &-wrap {
-    flex-shrink: 0;
-    &:hover {
-      .circle-link {
-        transform: scale(1.1);
-        border-color: $white;
-        margin-right: 0;
+  &:hover {
+    transform: scale(1.1);
+    border-color: $white;
+    margin-right: 0;
 
-        &-svg {
-          margin-left: -25px;
-        }
-      }
-    }
+    .circle-link-svg {
+      margin-left: -10px;
 
-    @include for-big-mobile {
-      .circle-link {
-        height: 20px;
-        width: 20px;
-        margin-top: 0;
-        margin-right: 0;
-
-        .circle-link-svg {
-          width: 16px;
-          margin-left: -10px;
-        }
+      @include for-big-mobile {
+        margin-left: -5px;
       }
     }
   }
+
+  @include for-big-mobile {
+    height: 20px;
+    width: 20px;
+    margin-top: 0;
+    margin-right: 0;
+
+    .circle-link-svg {
+      height: 10px;
+      width: 10px;
+      margin-left: -10px;
+    }
+  }
+}
+
+.serv-bgWrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }

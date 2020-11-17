@@ -1,11 +1,12 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
   box-sizing: border-box;
   width: 100%;
   padding-top: 65px;
+  transition: 0.5s;
 
   @include for-big-mobile {
     position: fixed;
@@ -16,6 +17,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    transition: 0.5s;
 
     &:nth-child(1) {
       margin-bottom: 45px;
@@ -216,6 +218,9 @@
       font-weight: $medium;
       color: $white;
       text-decoration: none;
+      &:hover {
+        color: $yellow;
+      }
 
       @include for-big-mobile {
         overflow: hidden;
@@ -290,6 +295,10 @@
         color: $white;
         text-decoration: none;
 
+        &:hover {
+          color: $yellow;
+        }
+
         &:after {
           content: '';
           display: block;
@@ -340,6 +349,12 @@
     color: $btnBlack;
     background-color: $btnYallow;
     text-decoration: none;
+    transition: 0.5s;
+
+    span {
+      max-width: 90px;
+      transition: max-width 0.5s;
+    }
 
     &:after {
       content: '';
@@ -352,7 +367,7 @@
       height: 22px;
       width: 23px;
       margin-left: 0;
-      background: center / auto url(../img/fixArrow.svg) no-repeat;
+      background: center / auto url(../img/Newarrow.svg) no-repeat;
       transition: 0.5s;
     }
 
@@ -389,16 +404,15 @@
   }
 
   &-fixed {
+    top: -186px;
     position: fixed;
-    padding-top: 0;
 
     @include for-big-mobile {
+      top: 0;
       background-color: #000;
     }
 
     .header-row:nth-child(1) {
-      display: none;
-
       @include for-big-mobile {
         display: flex;
       }
@@ -411,7 +425,7 @@
             display: block;
           }
         }
-        a {
+        a:not(.header-paymentBtn) {
           padding: 0;
           font-size: 18px;
 
@@ -446,26 +460,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 85px;
-        width: 300px;
-
-        span {
-          display: none;
-        }
+        padding: 30px 70px 30px 50px;
 
         &:after {
-          display: none;
+          right: 28px;
         }
 
-        &:before {
-          content: '';
-          order: 1;
-          position: relative;
-          display: block;
-          height: 22px;
-          width: 22px;
-          margin-left: 27px;
-          background: center / contain url(../img/fixArrow.svg) no-repeat;
+        span {
+          overflow: hidden;
+          max-width: 0;
         }
       }
     }

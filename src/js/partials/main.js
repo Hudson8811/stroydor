@@ -28,20 +28,22 @@ $(document).ready(function () {
 
     window.addEventListener('scroll', function(){
         paralax('.equipment-grid-item1', 5, true);
-        paralax('.equipment-grid-item2', 2, true);
-        paralax('.equipment-grid-item4', 7, true);
         paralax('.equipment-grid-item5', 6, true);
-        paralax('.equipment-bg', 2, false)
+        paralax('.project-item-wrap .project-item', 15, true);
+        paralax('.equipment-bg', 10, false);
+        $('body').css({
+            height: $('.wrapper').height(),
+        })
     })
 
     $('.services-grid-item').mousemove(function(){
         const servId = $(this).data('id');
-        $('.services-imageBg').css('display', 'none');
-        $(`.services-imageBg[data-id="${servId}"]`).css('display', 'block');
+        $('.services-imageBg').css('opacity', '0');
+        $(`.services-imageBg[data-id="${servId}"]`).css('opacity', '1');
     });
 
     $('.services-grid-item').mouseleave(function(){
-        $('.services-imageBg').css('display', 'none');
+        $('.services-imageBg').css('opacity', '0');
     });
 
     $('.users-slider').slick({
@@ -71,12 +73,18 @@ $(document).ready(function () {
         $(`.useMap-maping-dote[data-pos="${posId}"]`).addClass('useMap-maping-dote-active');
     });
 
-    if ($(this).scrollTop() > 186) $(".header").addClass("header-fixed");
+    if ($(this).scrollTop() > 236) $(".header").addClass("header-fixed");
         else $(".header").removeClass("header-fixed");
+
+        
         
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 186) $(".header").addClass("header-fixed");
-        else $(".header").removeClass("header-fixed");
+        if ($(this).scrollTop() > 236) {
+            $(".header").addClass("header-fixed");
+        }else {
+            $(".header").removeClass("header-fixed");
+        }
+        
     });
 
     $(".to-scroll").click(function (e) {
@@ -104,5 +112,10 @@ $(document).ready(function () {
     $(window).resize(function(){
         scrollControl()
     })
+
+   $('body').css({
+       height: $('.wrapper').height(),
+   })
 });
+
 

@@ -185,6 +185,9 @@
         line-height: 37px;
         color: $white;
         text-decoration: none;
+        &:hover {
+          color: $yellow;
+        }
 
         @include for-desktop2 {
           font-size: 15px;
@@ -310,6 +313,9 @@
         font-size: 18px;
         line-height: 25px;
         color: #ababab;
+        &:hover {
+          color: $yellow;
+        }
 
         @include for-desktop2 {
           font-size: 14px;
@@ -345,6 +351,10 @@
         font-weight: $medium;
         color: $white;
         text-decoration: none;
+
+        &:hover {
+          color: $yellow;
+        }
 
         &:after {
           content: '';
