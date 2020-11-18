@@ -170,6 +170,11 @@ SmoothScroll({
     touchpadSupport   : true,
 })
 
+
+setTimeout(() => {
+    $('.loader-container').addClass('loader-container-disabled');
+}, 300);
+
 });
 
 
