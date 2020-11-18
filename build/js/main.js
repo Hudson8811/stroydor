@@ -75,7 +75,7 @@ function scrollControl(){
 }
 
 $(document).ready(function () {
-    new WOW().init();
+
 
     window.addEventListener('scroll', function(){
         paralax('.equipment-grid-item1', 5, true);
@@ -227,3 +227,66 @@ setTimeout(() => {
 }, 300);
 
 });
+
+
+
+function animate(item, animType, delay){
+    $window = $(window);
+    if($window.scrollTop() + (window.innerHeight / 1.1) > $(item).offset().top &&
+    $window.scrollTop() - (window.innerHeight) < $(item).offset().top){
+        setTimeout(() => {
+            $(item).addClass(animType);
+        }, delay);
+    }
+}
+
+
+animate('.equipment-heading span.textAnim-disabled:nth-child(1)', 'textAnim-active', 500);
+animate('.equipment-heading span.textAnim-disabled:nth-child(2)', 'textAnim-active', 800);
+animate('.equipment-heading span.textAnim-disabled:nth-child(3)', 'textAnim-active', 1100);
+animate('.equipment-heading span.textAnim-disabled:nth-child(4)', 'textAnim-active', 1400);
+
+
+
+animate('.equipment-grid-item2 .equipment-icon', 'opacAnim-active', 800);
+animate('.equipment-grid-item2 p', 'textAnim-active', 800);
+animate('.equipment-grid-item3 .equipment-icon', 'opacAnim-active', 800);
+animate('.equipment-grid-item3 p', 'textAnim-active', 800);
+animate('.equipment-grid-item4 .equipment-icon', 'opacAnim-active', 800);
+animate('.equipment-grid-item4 p', 'textAnim-active', 800);
+
+animate('.warranty-title span.textAnim-disabled:nth-child(1)', 'textAnim-active', 500);
+animate('.warranty-title span.textAnim-disabled:nth-child(2)', 'textAnim-active', 800);
+animate('.warranty-title span.textAnim-disabled:nth-child(3)', 'textAnim-active', 1100);
+animate('.warranty-line', 'toRightAnim-active', 1400);
+animate('.warranty-desc span.textAnim-disabled:nth-child(1)', 'textAnim-active', 1700);
+animate('.warranty-desc span.textAnim-disabled:nth-child(2)', 'textAnim-active', 2000);
+
+
+animate('.users-line', 'toRightAnim-active', 800);
+
+$(window).scroll(function(){
+    animate('.equipment-heading span.textAnim-disabled:nth-child(1)', 'textAnim-active', 500);
+    animate('.equipment-heading span.textAnim-disabled:nth-child(2)', 'textAnim-active', 800);
+    animate('.equipment-heading span.textAnim-disabled:nth-child(3)', 'textAnim-active', 1100);
+    animate('.equipment-heading span.textAnim-disabled:nth-child(4)', 'textAnim-active', 1400);
+
+
+
+    animate('.equipment-grid-item2 .equipment-icon', 'opacAnim-active', 800);
+    animate('.equipment-grid-item2 p', 'textAnim-active', 800);
+    animate('.equipment-grid-item3 .equipment-icon', 'opacAnim-active', 800);
+    animate('.equipment-grid-item3 p', 'textAnim-active', 800);
+    animate('.equipment-grid-item4 .equipment-icon', 'opacAnim-active', 800);
+    animate('.equipment-grid-item4 p', 'textAnim-active', 800);
+
+    animate('.warranty-title span.textAnim-disabled:nth-child(1)', 'textAnim-active', 500);
+    animate('.warranty-title span.textAnim-disabled:nth-child(2)', 'textAnim-active', 800);
+    animate('.warranty-title span.textAnim-disabled:nth-child(3)', 'textAnim-active', 1100);
+    animate('.warranty-line', 'toRightAnim-active', 1400);
+    animate('.warranty-desc span.textAnim-disabled:nth-child(1)', 'textAnim-active', 1700);
+    animate('.warranty-desc span.textAnim-disabled:nth-child(2)', 'textAnim-active', 2000);
+
+
+    animate('.users-line', 'toRightAnim-active', 800);
+})
