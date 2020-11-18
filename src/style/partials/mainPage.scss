@@ -356,7 +356,7 @@
 
       &:last-child {
         position: absolute;
-        top: 100%;
+        top: 375px;
         left: 50%;
         z-index: 5;
         height: 260px;
@@ -366,6 +366,7 @@
         @include for-desktop2 {
           height: 200px;
           padding: 19px 22px 24px 25px;
+          top: 225px;
         }
 
         @include for-big-mobile {
@@ -1858,17 +1859,6 @@
     circle {
       transition: 0.2s;
     }
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
   }
 }
 
