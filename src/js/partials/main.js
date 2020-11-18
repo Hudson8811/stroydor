@@ -23,6 +23,7 @@ function scrollControl(){
     }
 }
 
+
 $(document).ready(function () {
     new WOW().init();
 
@@ -171,10 +172,12 @@ SmoothScroll({
 })
 
 
-setTimeout(() => {
-    $('.loader-container').addClass('loader-container-disabled');
-}, 300);
-
 });
 
 
+
+$(window).on('load', function() {
+    setTimeout(() => {
+        $('.loader-container').addClass('loader-container-disabled');
+    }, 300);
+});
