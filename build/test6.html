@@ -474,7 +474,8 @@
                           TweenLite.set($element, {yPercent:scrollAmountY  });
                       }
                       else{
-                          TweenLite.set($element, {y:scrollAmountY  });
+                          //TweenLite.set($element, {y:scrollAmountY  });
+                          $element.css('transform','translate3d(0,'+scrollAmountY+',0)')
                       }
                       if(isDebug){
                           console.log('Всего пикселей проскролено: '+s.offset.y)
@@ -484,7 +485,6 @@
                           console.log("ScrollAmountY: "+ scrollAmountY)
                       }
                   }
-
               });
           }
       }
@@ -498,6 +498,7 @@
           animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
           animateScrollEffect($(".equipment-number"), $win.height() * -0.6  , $(".equipment-number "), false, 0, $win.height());
           animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.8  , $(".project-item-wrap"), false, 0, $win.height());
+          animateScrollEffect($(".equipment-bg"), $win.height() * 1  , $(".equipment"), false, 0, $win.height());
 
 
           new ScrollMagic.Scene({triggerElement: '.equipment-heading', triggerHook: 0.9}).setTween( TweenMax.staggerFrom('.equipment-heading > h2 > span', 2, {y:50, autoAlpha:0, delay: 0.5}, 0.4 ) ).addTo(controllerMain);
