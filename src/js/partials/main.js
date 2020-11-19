@@ -173,9 +173,9 @@ $(document).ready(function () {
 
     scrollbar.addListener(function (status) {
         if (status.offset.y > 185) {
-            $(".header").addClass("header-fixed");
+            $(".header").addClass("header-fixed2");
         }else {
-            $(".header").removeClass("header-fixed");
+            $(".header").removeClass("header-fixed2");
             $(".header").css('transform','translateY(-'+status.offset.y+'px)')
         }
     });
