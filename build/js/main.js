@@ -230,9 +230,9 @@ $(document).ready(function () {
 
     scrollbar.addListener(function (status) {
         if (status.offset.y > 185) {
-            $(".header").addClass("header-fixed2");
+            $(".header").addClass("header-fixed");
         }else {
-            $(".header").removeClass("header-fixed2");
+            $(".header").removeClass("header-fixed");
             $(".header").css('transform','translateY(-'+status.offset.y+'px)')
         }
     });
