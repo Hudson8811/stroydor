@@ -445,8 +445,10 @@
       function animateScrollEffect($element, pixelsToScroll, $trigger, isDebug, isPercent, additionDuration){
           //если элемент существует, тогда продолжаем
           if($element.length){
-              var elementOffsetTop = $element.offset().top - $win.height();
-              var duration = $win.height() + $element.outerHeight() + pixelsToScroll;
+              //var elementOffsetTop = $element.offset().top - $win.height();
+              //var duration = $win.height() + $element.outerHeight() + pixelsToScroll;
+              var elementOffsetTop = 0;
+              var duration = 0;
               var scrollAmountY = 0;
               var scrolledInside = 0;
               var scrolledPercents = 0;
@@ -494,10 +496,10 @@
       $(document).ready(function () {
           var controllerMain = new ScrollMagic.Controller();
 
-          //animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
-          animateScrollEffect($(".equipment-number"), $win.height() * -0.6  , $(".equipment-number "), false, 0, $win.height());
-          animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.8  , $(".project-item-wrap"), false, 0, $win.height());
-          animateScrollEffect($(".equipment-bg"), $win.height() * 1  , $(".equipment"), false, 0, $win.height());
+          animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.25  , $(".equipment-grid "), false, 0,0);
+          animateScrollEffect($(".equipment-number"), $win.height() * -0.4  , $(".equipment-number "), false, 0, 0);
+          animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.5  , $(".project-item-wrap"), false, 0, 0);
+          animateScrollEffect($(".equipment-bg"), $win.height() * 0.1  , $(".equipment"), false, 0, 0);
 
 
           new ScrollMagic.Scene({triggerElement: '.equipment-heading', triggerHook: 0.9}).setTween( TweenMax.staggerFrom('.equipment-heading > h2 > span', 2, {y:50, autoAlpha:0, delay: 0.5}, 0.4 ) ).addTo(controllerMain);
