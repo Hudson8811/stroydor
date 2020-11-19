@@ -210,6 +210,11 @@
     position: relative;
     display: block;
     width: 163px;
+    box-sizing: border-box;
+    padding-left: 45px;
+    img{
+      width: 100%;
+    }
   }
 
   &-info {

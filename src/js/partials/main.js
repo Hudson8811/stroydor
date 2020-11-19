@@ -156,14 +156,12 @@ $(document).ready(function () {
         $(`.useMap-maping-dote[data-pos="${posId}"]`).addClass('useMap-maping-dote-active');
     });
 
-
+    /*
     if (scrollbar.offset.y > 185) {
-        $('.header--1').hide();
-        $('.header--2').show();
+        $(".header").addClass("header-fixed");
     } else {
-        $('.header--1').show();
-        $('.header--2').hide();
-    }
+        $(".header").removeClass("header-fixed");
+    }*/
 
     $('.users-slider').mousemove(function(){
         $('.fake-cursor').addClass('active')
@@ -175,11 +173,10 @@ $(document).ready(function () {
 
     scrollbar.addListener(function (status) {
         if (status.offset.y > 185) {
-            $('.header--1').hide();
-            $('.header--2').show();
+            $(".header").addClass("header-fixed");
         }else {
-            $('.header--1').show();
-            $('.header--2').hide();
+            $(".header").removeClass("header-fixed");
+            $(".header").css('transform','translateY(-'+status.offset.y+'px)')
         }
     });
 

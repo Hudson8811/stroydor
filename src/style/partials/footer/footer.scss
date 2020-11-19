@@ -24,11 +24,10 @@
   &-logo {
     display: block;
     width: 100%;
-    margin-left: -33px;
 
     &-wrap {
       display: block;
-      width: 166px;
+      width: 133px;
       margin-bottom: 75px;
 
       @include for-tablet {
