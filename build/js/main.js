@@ -56,7 +56,7 @@ for(i in Y){for(e=Y[i].tweens,t=e.length;--t>-1;)e[t]._gc&&e.splice(t,1);0===e.l
 /* my scripts */
 
 const scrollbar = Scrollbar.init(document.getElementById('smoothScroll'), {
-    damping: 0.03,
+    damping: 0.07,
 });
 
 const $win = $(window);
@@ -179,7 +179,7 @@ $(document).ready(function () {
     $('.services-grid-item').mousemove(function(){
         const servId = $(this).data('id');
         $('.services-imageBg').css('opacity', '0');
-        $(`.services-imageBg[data-id="${servId}"]`).css('opacity', '1');
+        $('.services-imageBg[data-id="'+servId+'"]').css('opacity', '1');
     });
 
     $('.services-grid-item').mouseleave(function(){
@@ -201,16 +201,16 @@ $(document).ready(function () {
     $('.useMap-title-link').mousemove(function(){
         const posId = $(this).data('pos-id');
         $('.useMap-title-link').removeClass('useMap-title-link-active');
-        $(`.useMap-title-link[data-pos-id="${posId}"]`).addClass('useMap-title-link-active');
+        $('.useMap-title-link[data-pos-id="'+posId+'"]').addClass('useMap-title-link-active');
         $('.useMap-maping-dote').removeClass('useMap-maping-dote-active');
-        $(`.useMap-maping-dote[data-pos="${posId}"]`).addClass('useMap-maping-dote-active');
+        $('.useMap-maping-dote[data-pos="'+posId+'"]').addClass('useMap-maping-dote-active');
     });
     $('.useMap-maping-dote').mousemove(function(){
         const posId = $(this).data('pos');
         $('.useMap-title-link').removeClass('useMap-title-link-active');
-        $(`.useMap-title-link[data-pos-id="${posId}"]`).addClass('useMap-title-link-active');
+        $('.useMap-title-link[data-pos-id="'+posId+'"]').addClass('useMap-title-link-active');
         $('.useMap-maping-dote').removeClass('useMap-maping-dote-active');
-        $(`.useMap-maping-dote[data-pos="${posId}"]`).addClass('useMap-maping-dote-active');
+        $('.useMap-maping-dote[data-pos="'+posId+'"]').addClass('useMap-maping-dote-active');
     });
 
     /*
@@ -245,7 +245,7 @@ $(document).ready(function () {
         $({ top: scrollbar.offset.y }).animate({ top: top }, {
             duration: 1000,
             easing: 'swing',
-            step(value) {
+            step: function(value) {
                 scrollbar.setPosition(0, value);
             }
         });
@@ -302,20 +302,11 @@ $('.main').mousemove(function(event){
 
 });
 
-function animate(item, animType, delay, ){
-    $window = $(window);
-    if($window.scrollTop() + (window.innerHeight / 1.1) > $(item).offset().top &&
-        $window.scrollTop() - (window.innerHeight) < $(item).offset().top){
-        setTimeout(() => {
-            $(item).addClass(animType);
-        }, delay);
-    }
-}
-
 
 
 $(window).on('load', function() {
-    setTimeout(() => {
-        $('.loader-container').addClass('loader-container-disabled');
-    }, 300);
+    setTimeout(
+        function (){
+            $('.loader-container').addClass('loader-container-disabled');
+        }, 300);
 });
