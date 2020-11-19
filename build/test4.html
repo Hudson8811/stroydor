@@ -465,6 +465,7 @@
 
 
             scrollbar.addListener(function (s) {
+                console.log(1);
                 if(s.offset.y >= elementOffsetTop && s.offset.y <= durationFromStartToEnd){
                     scrolledInside = scrollbar.offset.y - elementOffsetTop;
                     scrolledPercents = scrolledInside / duration * 100;
