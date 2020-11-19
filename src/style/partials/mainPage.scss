@@ -271,7 +271,7 @@
 
       @include for-big-mobile {
         height: 140px;
-        margin-top: 0 !important;
+        transform: none !important;
       }
 
       p {
@@ -516,10 +516,11 @@
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    padding: 100px 0 255px;
+    padding: 100px 0 65px;
 
     @include for-big-mobile {
       padding: 72px 0 56px;
+      transform: none !important;
     }
 
     p {
@@ -649,6 +650,7 @@
 
       @include for-big-mobile {
         width: 100%;
+        padding-top: 0;
       }
       .project-item {
         position: relative;
@@ -659,6 +661,7 @@
 
     @include for-big-mobile {
       width: 100%;
+      transform: none !important;
     }
 
     &:first-child {
@@ -1941,4 +1944,14 @@
   &.active {
     opacity: 1;
   }
+}
+
+
+
+#smoothScroll{
+  height: 100vh;
+}
+
+.v-hidden{
+  visibility: hidden;
 }
