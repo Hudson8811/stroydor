@@ -474,8 +474,7 @@
                           TweenLite.set($element, {yPercent:scrollAmountY  });
                       }
                       else{
-                          //TweenLite.set($element, {y:scrollAmountY  });
-                          $element.css('transform','translate3d(0,'+scrollAmountY+'px,0)');
+                          TweenLite.set($element, {y:scrollAmountY  });
                       }
                       if(isDebug){
                           console.log('Всего пикселей проскролено: '+s.offset.y)
@@ -495,7 +494,7 @@
       $(document).ready(function () {
           var controllerMain = new ScrollMagic.Controller();
 
-          animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
+          //animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
           animateScrollEffect($(".equipment-number"), $win.height() * -0.6  , $(".equipment-number "), false, 0, $win.height());
           animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.8  , $(".project-item-wrap"), false, 0, $win.height());
           animateScrollEffect($(".equipment-bg"), $win.height() * 1  , $(".equipment"), false, 0, $win.height());
