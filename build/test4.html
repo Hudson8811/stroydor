@@ -98,8 +98,8 @@
                         <span>Скролл вниз</span>
                     </div>
                 </div>
-                <div class="container equipment-grid">
-                    <div class="equipment-grid-item equipment-grid-item1">
+                <div class="container equipment-grid" style="position: relative">
+                    <div class="equipment-grid-item equipment-grid-item1" style="position: absolute;">
                         <span>Получите эксклюзивное предложение</span>
                         <p>Специальная <br> акция в октябре</p>
                         <div class="equipment-phone">
@@ -474,7 +474,8 @@
                         TweenLite.set($element, {yPercent:scrollAmountY  });
                     }
                     else{
-                        TweenLite.set($element, {y:scrollAmountY  });
+                        //TweenLite.set($element, {y:scrollAmountY  });
+                        $element.css('top',scrollAmountY+'px');
                     }
                     if(isDebug){
                         console.log('Всего пикселей проскролено: '+s.offset.y)
@@ -494,10 +495,11 @@
     $(document).ready(function () {
         var controllerMain = new ScrollMagic.Controller();
 
-        animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
-        //animateScrollEffect($(".equipment-number"), $win.height() * -0.6  , $(".equipment-number "), false, 0, $win.height());
-        //animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.8  , $(".project-item-wrap"), false, 0, $win.height());
-        //animateScrollEffect($(".equipment-bg"), $win.height() * 1  , $(".equipment"), false, 0, $win.height());
+
+        animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.25  , $(".equipment-grid "), false, 0,0);
+        //animateScrollEffect($(".equipment-number"), $win.height() * -0.4  , $(".equipment-number "), false, 0, 0);
+        //animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.5  , $(".project-item-wrap"), false, 0, 0);
+        //animateScrollEffect($(".equipment-bg"), $win.height() * 0.1  , $(".equipment"), false, 0, 0);
 
 
         new ScrollMagic.Scene({triggerElement: '.equipment-heading', triggerHook: 0.9}).setTween( TweenMax.staggerFrom('.equipment-heading > h2 > span', 2, {y:50, autoAlpha:0, delay: 0.5}, 0.4 ) ).addTo(controllerMain);
