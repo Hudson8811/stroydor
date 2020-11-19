@@ -95,7 +95,7 @@
       }
 
       @include for-big-mobile {
-        width: 108px;
+        width: 125px;
 
         &:after {
           display: none;
@@ -107,7 +107,6 @@
           img {
             display: block;
             width: 100%;
-            margin-left: -22px;
           }
         }
       }
@@ -211,9 +210,10 @@
     display: block;
     width: 163px;
     box-sizing: border-box;
-    padding-left: 45px;
     img{
       width: 100%;
+      height: 54px;
+      object-fit: contain;
     }
   }
 
@@ -460,7 +460,7 @@
 
         &-img {
           display: block;
-          height: 55px;
+          height: 54px;
           width: 100%;
           object-fit: contain;
         }
