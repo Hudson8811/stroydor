@@ -125,11 +125,11 @@ function scrollControl(){
 $(document).ready(function () {
     var controllerMain = new ScrollMagic.Controller();
 
-    /*animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
+    animateScrollEffect($(".equipment-grid-item1"), $win.height() * -0.45  , $(".equipment-grid "), false, 0, $win.height());
     animateScrollEffect($(".equipment-number"), $win.height() * -0.6  , $(".equipment-number "), false, 0, $win.height());
     animateScrollEffect($(".project-item-wrap .project-item"), $win.height() * -0.8  , $(".project-item-wrap"), false, 0, $win.height());
     animateScrollEffect($(".equipment-bg"), $win.height() * 1  , $(".equipment"), false, 0, $win.height());
-    */
+
 
     new ScrollMagic.Scene({triggerElement: '.equipment-heading', triggerHook: 0.9}).setTween( TweenMax.staggerFrom('.equipment-heading > h2 > span', 2, {y:50, autoAlpha:0, delay: 0.5}, 0.4 ) ).addTo(controllerMain);
 
@@ -215,9 +215,11 @@ $(document).ready(function () {
 
 
     if (scrollbar.offset.y > 185) {
-        document.getElementsByClassName('header')[0].className += " header-fixed";
+        $('.header--1').hide();
+        $('.header--2').show();
     } else {
-        $(".header").removeClass("header-fixed");
+        $('.header--1').show();
+        $('.header--2').hide();
     }
 
     $('.users-slider').mousemove(function(){
@@ -230,10 +232,11 @@ $(document).ready(function () {
 
     scrollbar.addListener(function (status) {
         if (status.offset.y > 185) {
-            $(".header").addClass("header-fixed");
+            $('.header--1').hide();
+            $('.header--2').show();
         }else {
-            $(".header").removeClass("header-fixed");
-            //$(".header").css('transform','translateY(-'+status.offset.y+'px)')
+            $('.header--1').show();
+            $('.header--2').hide();
         }
     });
 
@@ -257,7 +260,7 @@ $(document).ready(function () {
     $('.equipment-scroll').mouseleave(function(){
         $('.equipment-heading').removeClass('equipment-heading-active');
     });
-    
+
     $('.burger').click(function(){
         $(this).toggleClass('burger-active');
         $('.header-container').toggleClass('header-container-active');
