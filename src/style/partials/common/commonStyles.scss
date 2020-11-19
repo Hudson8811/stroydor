@@ -17,6 +17,7 @@ body {
   font-size: $text;
   line-height: $textLH;
   background-color: $white;
+  backface-visibility: hidden;
 }
 
 .container {

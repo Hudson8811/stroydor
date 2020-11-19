@@ -356,7 +356,7 @@
     color: $btnBlack;
     background-color: $btnYallow;
     text-decoration: none;
-    transition: 0.2s;
+    transition: padding 0.2s;
     flex-shrink: 0;
     margin-left: 60px;
 
@@ -377,7 +377,7 @@
       width: 23px;
       margin-left: 0;
       background: center / auto url(../img/Newarrow.svg) no-repeat;
-      transition: 0.2s;
+      transition: transform 0.2s;
     }
 
     @include for-desktop2 {

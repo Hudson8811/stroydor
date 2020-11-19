@@ -215,7 +215,7 @@ $(document).ready(function () {
 
 
     if (scrollbar.offset.y > 185) {
-        $(".header").addClass("header-fixed");
+        document.getElementsByClassName('header')[0].className += " header-fixed";
     } else {
         $(".header").removeClass("header-fixed");
     }
