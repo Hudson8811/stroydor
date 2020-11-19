@@ -22,6 +22,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    transition: 0.2s;
 
     &:nth-child(1) {
       margin-bottom: 45px;
@@ -43,6 +44,7 @@
         width: 100%;
         box-sizing: border-box;
         padding-top: 94px;
+        transition: transform 0.2s;
         transform: translate(-120vw);
 
         .header-paymentBtn {
@@ -354,11 +356,13 @@
     color: $btnBlack;
     background-color: $btnYallow;
     text-decoration: none;
+    transition: 0.2s;
     flex-shrink: 0;
     margin-left: 60px;
 
     span {
       max-width: 90px;
+      transition: max-width 0.2s;
     }
 
     &:after {
@@ -373,6 +377,7 @@
       width: 23px;
       margin-left: 0;
       background: center / auto url(../img/Newarrow.svg) no-repeat;
+      transition: 0.2s;
     }
 
     @include for-desktop2 {
@@ -411,6 +416,7 @@
     top: 0;
     position: fixed;
     padding-top: 0;
+    transform: none !important;
 
     @include for-big-mobile {
       top: 0;
@@ -491,6 +497,7 @@
   margin: 0 15px 0 23px;
   background-color: $btnYallow;
   cursor: pointer;
+  transition: 0.2s;
   flex-shrink: 0;
 
   &:before,
@@ -501,6 +508,7 @@
     height: 2px;
     width: 24px;
     background-color: $btnYallow;
+    transition: 0.2s;
   }
 
   &:before {

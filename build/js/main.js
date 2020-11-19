@@ -233,6 +233,7 @@ $(document).ready(function () {
             $(".header").addClass("header-fixed");
         }else {
             $(".header").removeClass("header-fixed");
+            $(".header").css('transform','translateY(-'+status.offset.y+'px)')
         }
     });
 
